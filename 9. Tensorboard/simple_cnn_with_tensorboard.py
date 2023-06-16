@@ -45,6 +45,7 @@ class SimpleCnn(nn.Module):
         x = self.fc1(x)
 
         return x
+
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
@@ -65,7 +66,7 @@ test_dataset = datasets.MNIST(
     root="/dataset/", train=False, transform=transformations.ToTensor(), download=True
 )
 
-# Class label
+# Class labels
 classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 # Training and logging parameters into the tensorboard
